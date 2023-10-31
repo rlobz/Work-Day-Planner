@@ -5,10 +5,10 @@ $(function () {
 
 
   for (let hour = 9; hour <= 17; hour++) {
-    let row = $("<div>").addClass("row time-block").attr("id", "hour-" + hour);
-    let hourDiv = $("<div>").addClass("hour col-1").text(hour + (hour < 12 ? "am" : "pm"));
-    let textArea = $("<textarea>").addClass("description col-10");
-    let saveBtn = $("<button>").addClass("saveBtn col-1").html('<i class="fas fa-save"></i>');
+    var row = $("<div>").addClass("row time-block").attr("id", "hour-" + hour);
+    var hourDiv = $("<div>").addClass("hour col-1").text(hour + (hour < 12 ? "am" : "pm"));
+    var textArea = $("<textarea>").addClass("description col-10");
+    var saveBtn = $("<button>").addClass("saveBtn col-1").html('<i class="fas fa-save"></i>');
 
     row.append(hourDiv, textArea, saveBtn);
     $("#timePlanner").append(row);
