@@ -2,6 +2,21 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+
+
+  for (let hour = 9; hour <= 17; hour++) {
+    let row = $("<div>").addClass("row time-block").attr("id", "hour-" + hour);
+    let hourDiv = $("<div>").addClass("hour col-1").text(hour + (hour < 12 ? "am" : "pm"));
+    let textArea = $("<textarea>").addClass("description col-10");
+    let saveBtn = $("<button>").addClass("saveBtn col-1").html('<i class="fas fa-save"></i>');
+
+    row.append(hourDiv, textArea, saveBtn);
+    $("#timePlanner").append(row);
+}
+
+
+
+
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -18,8 +33,6 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
-
-
 
     // TODO: Add code to display the current date in the header of the page.
 
