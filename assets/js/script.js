@@ -8,7 +8,10 @@ $(function () {
     var AmPmHour = dayjs().hour(hour).format('ha');
     var row = $("<div>").addClass("row time-block").attr("id", "hour-" + hour);
     var hourDiv = $("<div>").addClass("hour col-1").text(AmPmHour);
-    var textArea = $("<textarea>").addClass("description col-10");
+    var textArea = $("<textarea>")
+    .addClass("description col-10")
+    .attr("id", "textarea-" + hour)
+    .attr("name", "textarea-" + hour);
     var saveBtn = $("<button>").addClass("saveBtn col-1").html('<i class="fas fa-save"></i>');
 
     row.append(hourDiv, textArea, saveBtn);
